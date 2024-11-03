@@ -1,0 +1,12 @@
+:root {
+  --dark: #111110;
+  --light: #d0cecb;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
