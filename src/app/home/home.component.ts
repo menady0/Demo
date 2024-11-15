@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit {
     setTimeout(() => {
       circle.style.display = 'none';
     }, 600);
-    courses.style.display = 'block'
+    courses.style.display = 'flex'
     
 
     
