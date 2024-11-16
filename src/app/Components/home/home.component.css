@@ -1,13 +1,13 @@
 .parent {
   height: 100vh;
-  background-image: url("../../../public/Home/background.jpg");
+  background-image: url("../../../../public/Home/background.jpg");
   background-position: center;
   background-size: cover;
 
   /* display: none; */
 }
 .bckgroundToggle {
-  background-image: url("../../../public/Home/Transparnt.png");
+  background-image: url("../../../../public/Home/Transparnt.png");
   height: 70px;
   transition: 3s;
 }

@@ -1,0 +1,143 @@
+  <div class="back">
+  <div class="content">
+      <i class="bi bi-arrow-left" routerLink="/home"></i>
+      <p>Courses</p>
+    </div>
+    <div class="user">
+      <div class="search">
+        <input type="text" placeholder="Search...">
+        <i class="bi bi-search"></i>
+      </div>
+      <i class="bi bi-person-circle" (click)="user()"></i>
+      <i class="bi bi-caret-up-fill"></i>
+      <ul>
+        <li>
+          <a routerLink="/login">Login</a>
+        </li>
+        <li>
+          <a routerLink="/login">Signup</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="container">
+  <div class="listStyle">
+    <i class="bi bi-grid-3x3-gap-fill" id="grid" [ngClass]="getClass('grid')" (click)="clicked('grid')"></i>
+    <i class="bi bi-list-task" id="list" [ngClass]="getClass('list')" (click)="clicked('list')"></i>
+  </div>
+
+  <!-- Card countainer -->
+  <div [ngClass]="getViewClass()">
+    <!-- Card -->
+    <div class="course" [ngClass]="course()">
+      <div class="empty">
+        <a href="">Enroll</a>
+      </div>
+      <img src="Courses/frontend.jpg" alt="">
+      <div class="context" [ngClass]="context()">
+        <div class="text">
+          <h3>Frontend Developer</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, laborum.</p>
+        </div>
+        <div class="info" [ngClass]="info()">
+          <div>
+            <i class="bi bi-journals"></i>
+            20 Lessons
+          </div>
+          <div>
+            <i class="bi bi-stopwatch"></i>
+            30 hr 12 min
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="course" [ngClass]="course()">
+      <div class="empty">
+        <a href="">Enroll</a>
+      </div>
+      <img src="Courses/frontend.jpg" alt="">
+      <div class="context" [ngClass]="context()">
+        <div class="text">
+          <h3>Frontend Developer</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, laborum.</p>
+        </div>
+        <div class="info" [ngClass]="info()">
+          <div>
+            <i class="bi bi-journals"></i>
+            20 Lessons
+          </div>
+          <div>
+            <i class="bi bi-stopwatch"></i>
+            30 hr 12 min
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="course" [ngClass]="course()">
+      <div class="empty">
+        <a href="">Enroll</a>
+      </div>
+      <img src="Courses/frontend.jpg" alt="">
+      <div class="context" [ngClass]="context()">
+        <div class="text">
+          <h3>Frontend Developer</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, laborum.</p>
+        </div>
+        <div class="info" [ngClass]="info()">
+          <div>
+            <i class="bi bi-journals"></i>
+            20 Lessons
+          </div>
+          <div>
+            <i class="bi bi-stopwatch"></i>
+            30 hr 12 min
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="course" [ngClass]="course()">
+      <div class="empty">
+        <a href="">Enroll</a>
+      </div>
+      <img src="Courses/frontend.jpg" alt="">
+      <div class="context" [ngClass]="context()">
+        <div class="text">
+          <h3>Frontend Developer</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, laborum.</p>
+        </div>
+        <div class="info" [ngClass]="info()">
+          <div>
+            <i class="bi bi-journals"></i>
+            20 Lessons
+          </div>
+          <div>
+            <i class="bi bi-stopwatch"></i>
+            30 hr 12 min
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="course" [ngClass]="course()">
+      <div class="empty">
+        <a href="">Enroll</a>
+      </div>
+      <img src="Courses/frontend.jpg" alt="">
+      <div class="context" [ngClass]="context()">
+        <div class="text">
+          <h3>Frontend Developer</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, laborum.</p>
+        </div>
+        <div class="info" [ngClass]="info()">
+          <div>
+            <i class="bi bi-journals"></i>
+            20 Lessons
+          </div>
+          <div>
+            <i class="bi bi-stopwatch"></i>
+            30 hr 12 min
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
