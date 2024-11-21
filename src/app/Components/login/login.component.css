@@ -1,0 +1,235 @@
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-inline: 7%;
+  overflow: hidden;
+}
+.container #learny {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--light);
+  z-index: 101;
+}
+
+.slider {
+  background: linear-gradient(#38b791, #3aaf9f);
+  width: 40%;
+  height: 100vh;
+  position: absolute;
+  background-image: url('../../../../public/Login/login.png');
+  background-size: cover;
+  transition: all .8s ease-in-out;
+  z-index: 100;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.slider-container {
+  padding-inline: 10%;
+  text-align: center;
+  color: white;
+}
+.context1 {
+  transform: translateX(0);
+  /* transition: 1s ease-in-out; */
+  /* position: relative;
+  left: 0; */
+  /* left: -50vw; */
+  /* display: none; */
+}
+.context1.moved {
+  animation: moving 1.5s forwards;
+}
+@keyframes moving {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50%{
+    transform: translateX(50vw);
+  }
+}
+.context1.movedBack {
+  animation: movingBack 1.5s forwards;
+}
+@keyframes movingBack {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50%{
+    transform: translateX(-50vw);
+  }
+}
+
+.slider-container h2 {
+  margin-block: 40px;
+  font-size: 36px;
+}
+.slider-container p {
+  margin-block: 30px;
+  color: #5c5c5c;
+}
+.slider-container button {
+  background-color: transparent;
+  border: 1px solid white;
+}
+.moved {
+  left: 100%;
+  transform: translateX(-100%);
+  background-position: right; 
+  animation: toRight 1s ease-in-out;
+}
+@keyframes toRight {
+  0% {
+    width: 40%;
+  }
+  50% {
+    width: 55%;
+  }
+  100% {
+    width: 40%;
+  }
+}
+
+.movingBack {
+  left: 0%;
+  transform: translateX(0%);
+  animation: toLeft 1s ease-in-out;
+  background-position: left;
+}
+
+@keyframes toLeft {
+  0% {
+    width: 40%;
+  }
+  50% {
+    width: 55%;
+  }
+  100% {
+    width: 40%;
+  }
+}
+
+
+
+
+.login {
+  text-align: center;
+  position: relative;
+  left: 55%;
+  transition: 1s;
+  /* transform: translateX(-75%); */
+}
+.login h2 {
+  font-size: 3vw;
+  color: var(--dark);
+  margin-bottom: 20px;
+  transition: 1s;
+}
+.links {
+  padding-block: 20px;
+}
+.links a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin-inline: 3px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  color: var(--dark);
+  transition: .5s;
+}
+.links a:hover {
+  background-color: var(--dark);
+  color: white;
+}
+.links i {
+  font-size: 16px;
+}
+.login p {
+  color: rgba(0, 0, 0, 0.4);
+  margin-bottom: 20px;
+}
+.login label {
+  display: block;
+  position: relative;
+  margin-block: 20px;
+}
+
+.login #forgot {
+  display: none;
+}
+
+label input {
+  padding: 13px 40px;
+  width: 100%;
+  background-color: #11111009;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+label input:focus {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+label i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+form a {
+  display: inline-block;
+  color: black;
+  margin-bottom: 30px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  padding-bottom: 10px;
+}
+
+button {
+  padding: 10px 60px;
+  font-size: 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  border: none;
+  background-color: var(--dark);
+  text-transform: uppercase;
+  font-size: 18px;
+  color: white;
+  transition: .5s;
+  
+}
+button.animated {
+  animation: btnAnimation 1s;
+}
+button.animatedBack {
+  animation: btnAnimationBack 1s;
+}
+@keyframes btnAnimation {
+  0%, 100% {
+    padding-inline: 60px;
+  }
+  50% {
+    padding-inline: 100px;
+  }
+}
+@keyframes btnAnimationBack {
+  0%, 100% {
+    padding-inline: 60px;
+  }
+  50% {
+    padding-inline: 100px;
+  }
+}

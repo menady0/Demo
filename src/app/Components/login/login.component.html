@@ -1,1 +1,65 @@
-<p>login works!</p>
+<div class="container">
+  <a href="" id="learny">Learny.</a>
+  <!-- <div class="slider" [class.moved]="isMoved"> -->
+  <div class="slider"  [ngClass]="{'moved': isMoved, 'movingBack': !isMoved}">
+    <div class="slider-container">
+      <div class="context1" [ngClass]="{'moved': isMoved, 'movedBack': !isMoved}">
+        <!-- <h2>Welcome Back!</h2>
+        <p>
+          To keep connected with us please
+          <br>login with personal info
+        </p> -->
+        <h2>Nice To Meet You!</h2>
+        <p>
+          Enter your personal details<br>
+          and start jounray with us
+        </p>
+      </div>
+      <!-- <div class="context2">
+      </div> -->
+      <button (click)="toggleSlide()" [ngClass]="{'animated': isMoved, 'animatedBack': !isMoved}">Sign in</button>
+    </div>
+  </div>
+
+
+  <div class="login">
+    <!-- <h2>{{isMoved ? logion : sign_up}}</h2> -->
+    <h2>Create Account</h2>
+    <!-- <h2>Sign in to Learny.</h2> -->
+    <div class="links">
+      <a href="https://facebook.com">
+        <i class="bi bi-facebook"></i>
+      </a>
+      <a href="https://twitter.com">
+        <i class="bi bi-twitter-x"></i>
+      </a>
+      <a href="https://linkedin.com">
+        <i class="bi bi-linkedin"></i>
+      </a>
+    </div>
+    <p>or use your email for registration:</p>
+    <!-- <p>or use your email account:</p> -->
+    <form action="" class="frmLogin">
+      <label for="name">
+        <i class="bi bi-person"></i>
+        <input type="name" name="name" id="name" placeholder="Name">
+      </label>
+      <label for="email">
+        <i class="bi bi-envelope"></i>
+        <input type="email" name="email" id="email" placeholder="Email" required>
+      </label>
+      <label for="password">
+        <i class="bi bi-key-fill"></i>
+        <input type="password" name="password" id="password" placeholder="Password" required>
+      </label>
+      <a href="" id="forgot">Forgot your password?</a>
+      <div class="btn">
+        <button type="submit">sign up</button>
+        <!-- <button type="submit">Sign in</button> -->
+      </div>
+    </form>
+  </div>
+  <div class="signup">
+    <form action="" class="signup"></form>
+  </div>
+</div>
