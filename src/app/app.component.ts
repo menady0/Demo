@@ -3,6 +3,8 @@ import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from './Components/home/home.component';
 import { CoursesComponent } from './Components/courses/courses.component';
 import { LoginComponent } from './Components/login/login.component';
+import { AboutComponent } from './Components/about/about.component';
+import { FooterComponent } from "./Components/footer/footer.component";
 
 @Component({
   selector: 'app-root',
@@ -11,11 +13,13 @@ import { LoginComponent } from './Components/login/login.component';
     RouterOutlet,
     HomeComponent,
     CoursesComponent,
-    LoginComponent
-  ],
+    LoginComponent,
+    AboutComponent,
+    FooterComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Demo1';
+  title = 'Learny';
 }
