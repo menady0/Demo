@@ -8,9 +8,9 @@ import { LoginComponent } from './Components/login/login.component';
   selector: 'app-root',
   standalone: true,
   imports: [
-    // RouterOutlet,
-    // HomeComponent,
-    // CoursesComponent,
+    RouterOutlet,
+    HomeComponent,
+    CoursesComponent,
     LoginComponent
   ],
   templateUrl: './app.component.html',

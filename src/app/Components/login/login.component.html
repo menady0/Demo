@@ -1,22 +1,15 @@
 <div class="container">
-  <a href="" id="learny">Learny.</a>
+  <a routerLink="/home" id="learny">Learny.</a>
   <!-- <div class="slider" [class.moved]="isMoved"> -->
   <div class="slider"  [ngClass]="{'moved': isMoved, 'movingBack': !isMoved}">
     <div class="slider-container">
       <div class="context1" [ngClass]="{'moved': isMoved, 'movedBack': !isMoved}">
-        <!-- <h2>Welcome Back!</h2>
-        <p>
-          To keep connected with us please
-          <br>login with personal info
-        </p> -->
         <h2>Nice To Meet You!</h2>
         <p>
           Enter your personal details<br>
           and start jounray with us
         </p>
       </div>
-      <!-- <div class="context2">
-      </div> -->
       <button (click)="toggleSlide()" [ngClass]="{'animated': isMoved, 'animatedBack': !isMoved}">Sign in</button>
     </div>
   </div>
@@ -58,6 +51,7 @@
         <!-- <button type="submit">Sign in</button> -->
       </div>
     </form>
+    <span id="haveAccount">Already have account? <a (click)="login()">login</a></span>
   </div>
   <div class="signup">
     <form action="" class="signup"></form>

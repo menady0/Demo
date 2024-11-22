@@ -233,3 +233,45 @@ button.animatedBack {
     padding-inline: 100px;
   }
 }
+
+#haveAccount {
+  display: block;
+  margin-block: 30px;
+  color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+#haveAccount a {
+  text-transform: uppercase;
+  color: var(--dark);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+  padding-bottom: 3px;
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  .container {
+    justify-content: center;
+  }
+  .slider {
+    display: none;
+  }
+  .container #learny {
+    color: var(--dark);
+  }
+  .login{
+    left: 0;
+  }
+  .login h2 {
+    font-size: 40px;
+  }
+  #haveAccount {
+    display: block;
+  }
+}
+@media (max-width: 425px){
+  .login h2 {
+    font-size: 24px;
+  }
+  .container #learny {
+    font-size: 14px;
+  }
+}

@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -101,5 +102,40 @@ export class LoginComponent {
       
       btn.style.color = 'white'
     }, 750);
+  }
+
+  log:Boolean = false;
+  login(){
+    this.log = !this.log;
+    
+    const h2 = document.querySelector('.login h2') as HTMLDivElement;
+    const p = document.querySelector('.login p') as HTMLDivElement;
+    const labelName = document.querySelector('.frmLogin label[for="name"]') as HTMLDivElement;
+    const forgot = document.getElementById('forgot') as HTMLDivElement;
+    const btn = document.querySelector('.btn button') as HTMLDivElement;
+    const login = document.querySelector('#haveAccount') as HTMLDivElement;
+    const span = document.querySelector('#haveAccount a') as HTMLDivElement;
+    
+    if(this.log){
+      h2.innerHTML = 'Sign in to Learny.'
+      p.innerHTML = 'or use your email account:'
+      labelName.style.display = 'none'
+      forgot.style.display = 'inline-block'
+      btn.innerHTML = 'sign in'
+      login.innerHTML = "Don't have an account? "
+      login.appendChild(span);
+      span.innerHTML = 'sign up'
+    }
+    else {
+      h2.innerHTML = 'Create Account'
+      p.innerHTML = 'or use your email for registration:'
+      labelName.style.display = 'block'
+      forgot.style.display = 'none'
+      btn.innerHTML = 'sign up'
+
+      login.innerHTML = "Already have account "
+      login.appendChild(span);
+      span.innerHTML = 'sign in'
+    }
   }
 }
