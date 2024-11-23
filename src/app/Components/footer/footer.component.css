@@ -16,6 +16,9 @@
   gap: 30px;
   font-size: 14px;
 }
+.blue {
+  color: var(--blue);
+}
 .logo .text {
   border-left: 1px solid rgba(208, 206, 203, 0.3);
   padding-left: 30px;
@@ -54,13 +57,14 @@
   border: 1px solid transparent;
   border-radius: 25px;
   cursor: pointer;
-  background-color: #86d790;
+  background-color: #181818;
+  /* background-color: #86d790; */
   color: white;
   font-weight: bold;
   transition: .5s;
 }
 .input button:hover {
-  background-color: #181818;
+  background-color: var(--blue);
 }
 .policy p:first-child {
   display: flex;
