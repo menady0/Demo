@@ -133,7 +133,7 @@ export class LoginComponent {
       forgot.style.display = 'none'
       btn.innerHTML = 'sign up'
 
-      login.innerHTML = "Already have account "
+      login.innerHTML = "Already have account? "
       login.appendChild(span);
       span.innerHTML = 'sign in'
     }

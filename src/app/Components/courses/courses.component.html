@@ -1,29 +1,40 @@
-  <div class="back">
+<div class="back">
   <div class="content">
-      <i class="bi bi-arrow-left" routerLink="/home"></i>
-      <p>Courses</p>
+    <i class="bi bi-arrow-left" routerLink="/home"></i>
+    <p>Courses</p>
   </div>
-    <div class="user">
-      <div class="search">
-        <input type="text" placeholder="Search...">
-        <i class="bi bi-search"></i>
-      </div>
-      <i class="bi bi-person-circle" (click)="user()"></i>
-      <i class="bi bi-caret-up-fill"></i>
-      <ul>
-        <li>
-          <a routerLink="/login">Login</a>
-        </li>
-        <li>
-          <a routerLink="/login">Signup</a>
-        </li>
-      </ul>
+  <div class="user">
+    <div class="search">
+      <input type="text" placeholder="Search..." />
+      <i class="bi bi-search"></i>
     </div>
+    <i class="bi bi-person-circle" (click)="user()"></i>
+    <i class="bi bi-caret-up-fill"></i>
+    <ul>
+      <li>
+        <a routerLink="/login">Login</a>
+      </li>
+      <li>
+        <a routerLink="/login">Signup</a>
+      </li>
+    </ul>
   </div>
+</div>
+
 <div class="container">
   <div class="listStyle">
-    <i class="bi bi-grid-3x3-gap-fill" id="grid" [ngClass]="getClass('grid')" (click)="clicked('grid')"></i>
-    <i class="bi bi-list-task" id="list" [ngClass]="getClass('list')" (click)="clicked('list')"></i>
+    <i
+      class="bi bi-grid-3x3-gap-fill"
+      id="grid"
+      [ngClass]="getClass('grid')"
+      (click)="clicked('grid')"
+    ></i>
+    <i
+      class="bi bi-list-task"
+      id="list"
+      [ngClass]="getClass('list')"
+      (click)="clicked('list')"
+    ></i>
   </div>
 
   <!-- Card countainer -->
@@ -31,13 +42,19 @@
     <!-- Card -->
     <div class="course" [ngClass]="course()">
       <div class="empty">
-        <a href="">Enroll</a>
+        <div class="btns" [ngClass]="btns()">
+          <a (click)="preview()">Preview</a>
+          <a routerLink="/login">Enroll</a>
+        </div>
       </div>
-      <img src="Courses/frontend.jpg" alt="">
+      <img src="Courses/frontend.jpg" alt="" />
       <div class="context" [ngClass]="context()">
         <div class="text">
           <h3>Frontend Developer</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, laborum.</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
+            laborum.
+          </p>
         </div>
         <div class="info" [ngClass]="info()">
           <div>
@@ -53,13 +70,19 @@
     </div>
     <div class="course" [ngClass]="course()">
       <div class="empty">
-        <a href="">Enroll</a>
+        <div class="btns" [ngClass]="btns()">
+          <a>Preview</a>
+          <a href="">Enroll</a>
+        </div>
       </div>
-      <img src="Courses/frontend.jpg" alt="">
+      <img src="Courses/frontend.jpg" alt="" />
       <div class="context" [ngClass]="context()">
         <div class="text">
           <h3>Frontend Developer</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, laborum.</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
+            laborum.
+          </p>
         </div>
         <div class="info" [ngClass]="info()">
           <div>
@@ -75,13 +98,19 @@
     </div>
     <div class="course" [ngClass]="course()">
       <div class="empty">
-        <a href="">Enroll</a>
+        <div class="btns" [ngClass]="btns()">
+          <a>Preview</a>
+          <a href="">Enroll</a>
+        </div>
       </div>
-      <img src="Courses/frontend.jpg" alt="">
+      <img src="Courses/frontend.jpg" alt="" />
       <div class="context" [ngClass]="context()">
         <div class="text">
           <h3>Frontend Developer</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, laborum.</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
+            laborum.
+          </p>
         </div>
         <div class="info" [ngClass]="info()">
           <div>
@@ -97,13 +126,19 @@
     </div>
     <div class="course" [ngClass]="course()">
       <div class="empty">
-        <a href="">Enroll</a>
+        <div class="btns" [ngClass]="btns()">
+          <a>Preview</a>
+          <a href="">Enroll</a>
+        </div>
       </div>
-      <img src="Courses/frontend.jpg" alt="">
+      <img src="Courses/frontend.jpg" alt="" />
       <div class="context" [ngClass]="context()">
         <div class="text">
           <h3>Frontend Developer</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, laborum.</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
+            laborum.
+          </p>
         </div>
         <div class="info" [ngClass]="info()">
           <div>
@@ -119,13 +154,19 @@
     </div>
     <div class="course" [ngClass]="course()">
       <div class="empty">
-        <a href="">Enroll</a>
+        <div class="btns" [ngClass]="btns()">
+          <a>Preview</a>
+          <a href="">Enroll</a>
+        </div>
       </div>
-      <img src="Courses/frontend.jpg" alt="">
+      <img src="Courses/frontend.jpg" alt="" />
       <div class="context" [ngClass]="context()">
         <div class="text">
           <h3>Frontend Developer</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, laborum.</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
+            laborum.
+          </p>
         </div>
         <div class="info" [ngClass]="info()">
           <div>
@@ -137,6 +178,67 @@
             30 hr 12 min
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sliderContainer" (click)="hide($event)">
+  <div class="slider">
+
+    <div class="dash"></div>
+    <div class="frameContainer">
+      <iframe
+        title="YouTube video player"
+        src="https://www.youtube.com/embed/GJ8jidDdWVg?si=pAyccH1Wd2kDykLv"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <div class="container">
+      <h3>Quick Introduction</h3>
+      <p>
+        Front-end development focuses on creating the visual and interactive aspects of websites and applications, ensuring a seamless user experience through HTML, CSS, and JavaScript.
+      </p>
+      <h3>What you will learn?</h3>
+      <ul>
+        <li>
+          Create a responsive website using HTML to structure content, CSS to handle visual style, and JavaScript to develop interactive experiences. 
+        </li>
+        <li>
+          Learn to use React in relation to Javascript libraries and frameworks.
+        </li>
+        <li>
+          Learn Bootstrap CSS Framework to create webpages and work with GitHub repositories and version control.
+        </li>
+        <li>
+          Prepare for a coding interview, learn best approaches to problem-solving, and build portfolio-ready projects you can share during job interviews.
+        </li>
+      </ul>
+
+      <div class="CourseContent">
+        <div class="contentHeader" (click)="syllabus()">
+          <h3>Our Syllabus</h3>
+          <i class="bi bi-chevron-down"></i>
+        </div>
+        <ol class="subjects">
+          <li>Intro to the Internet and Web</li>
+          <li>HTML and CSS</li>
+          <li>Git Basics</li>
+          <li>JavaScript Basics</li>
+          <li>Advanced JavaScript</li>
+          <li>Asynchronous JavaScript</li>
+          <li>React Basics</li>
+          <li>Advanced React</li>
+        </ol>
+      </div>
+
+      <div class="btnSlider">
+        <button (click)="preview()"><i class="bi bi-arrow-left-short"></i> Back</button>
+        <button routerLink="/login">Let's Start <i class="bi bi-arrow-right-short"></i></button>
       </div>
     </div>
   </div>

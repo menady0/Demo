@@ -3,22 +3,22 @@
     <section class="container">
       <nav>
         <i class="bi bi-list" (click)="menu()"></i>
-        <div class="logo">Learny.</div>
+        <div class="logo"><span class="blue">Lear</span>ny<span class="blue">.</span></div>
         <ul>
           <li>
-            <a href="">Home</a>
+            <a routerLink="/home">Home</a>
           </li>
           <li>
             <a routerLink="/about">About</a>
           </li>
           <li>
-            <a href="">Teachers</a>
+            <a routerLink="/courses">Browse</a>
           </li>
           <li>
-            <a routerLink="/courses">Courses</a>
+            <a>Forum</a>
           </li>
           <li>
-            <a href="">Career</a>
+            <a>Community</a>
           </li>
         </ul>
         <div class="join">
@@ -135,7 +135,7 @@
       </div>
     </div>
     <div class="more-courses">
-      <a href="#">Explore More <i class="bi bi-arrow-right"></i></a>
+      <a routerLink="/courses">Explore More <i class="bi bi-arrow-right"></i></a>
     </div>
   </div>
 </div>

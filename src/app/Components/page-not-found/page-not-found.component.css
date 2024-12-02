@@ -1,0 +1,219 @@
+section {
+  height: 100vh;
+  padding-inline: 5%;
+  background-color: var(--dark);
+  color: var(--light);
+  overflow: hidden;
+}
+.parent {
+  width: 100%;
+  height: 97vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notfound {
+  font-size: 250px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.notfound .four:first-child {
+  display: inline-block;
+  animation: animateFirst 3s infinite ease-in-out;
+  font-weight: bold;
+}
+.notfound .four:last-child {
+  display: inline-block;
+  animation: animateFirst 3s .8s infinite ease-in-out;
+  font-weight: bold;
+}
+@keyframes animateFirst {
+  0%, 100% {
+    transform: translateY(20px) rotate(-15deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(-15deg);
+  }
+}
+.notfound .zero {
+  font-size: 100px;
+  display: inline-block;
+  margin-inline: 40px;
+  animation: zero 2.5s infinite linear;
+}
+@keyframes zero {
+  0%, 100% {
+    transform: translateY(95px);
+  }
+  50% {
+    transform: translateY(-95px);
+  }
+}
+.notfound::before {
+  content: '';
+  width: 180px;
+  height: 10px;
+  background-color: var(--blue);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 25px;
+}
+.notfound::after {
+  content: '';
+  width: 180px;
+  height: 10px;
+  background-color: var(--blue);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 25px;
+}
+.text {
+  text-transform: capitalize;
+  margin-top: 60px;
+  width: 55%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.bugs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+}
+img {
+  width: 25px;
+  display: inline-block;
+}
+.bugs img:nth-child(1){
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  transform: rotate(45deg);
+  animation: bug1 12s forwards ease;
+}
+@keyframes bug1 {
+  0% {
+    top: 100%;
+    left: 0%;
+  }
+  100% {
+    top: 0%;
+    left: 100%;
+  }
+}
+.bugs img:nth-child(2){
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translateY(-50%);
+  transform: rotate(90deg);
+  animation: bug2 10s forwards linear;
+}
+@keyframes bug2 {
+  0% {
+    top: 50%;
+    left: 0%;
+  }
+  100% {
+    top: 50%;
+    left: 100%;
+  }
+}
+
+.home {
+  text-align: center;
+  margin-top: 20px;
+}
+.home button {
+  padding: 10px 30px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: .5s;
+  background-color: var(--blue);
+}
+.home button:hover {
+  background-color: #181818;
+}
+.home button i::before {
+  transition: .5s;
+}
+.home button:hover i::before {
+  animation: back 1.5s infinite;
+}
+@keyframes back {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+.footer .links {
+  display: flex;
+  gap: 20px;
+}
+.links a {
+  text-decoration: none;
+  color: white;
+  transition: .5s;
+}
+.links a:hover {
+  color: var(--blue);
+}
+
+@media (max-width: 768px) {
+  .notfound::before,
+  .notfound::after {
+    width: 20%;
+  }
+  .text {
+    width: 100%;
+    font-size: 2.5vw;
+  }
+}
+@media (max-width: 600px) {
+  .notfound {
+    font-size: 20vw;
+  }
+  .notfound .zero {
+    animation: none;
+  }
+}
+@media (max-width: 425px) {
+  .notfound .zero {
+    font-size: 20vw;
+  }
+  .footer {
+    font-size: 8px;
+  }
+}
+@media (max-width: 320px) {
+  .notfound::before,
+  .notfound::after {
+    display: none;
+  }
+  .notfound .four:first-child,
+  .notfound .four:last-child {
+    animation: none;
+  }
+}

@@ -69,6 +69,9 @@ export class CoursesComponent implements OnInit{
   info(): string{
     return this.activeIcon === 'grid' ? 'info' : 'list-view';
   }
+  btns(): string {
+    return this.activeIcon === 'grid' ? 'btns' : 'list-view';
+  }
 
 
   menuOpened = false;
@@ -86,5 +89,79 @@ export class CoursesComponent implements OnInit{
     
     this.menuOpened = !this.menuOpened;
     menu.classList.toggle('menuOpened')
+  }
+
+  isPreviewed:boolean = false;
+  preview(){
+    const container = document.querySelector('.sliderContainer') as HTMLDivElement;
+    const slider = document.querySelector('.slider') as HTMLDivElement;
+    const body = document.body as HTMLDivElement;
+    this.isPreviewed = !this.isPreviewed;
+    if(this.isPreviewed){
+      container.style.display = 'block'
+      setTimeout(() => {
+        container.style.opacity = '1'
+        slider.style.bottom = '0'
+      }, 200);
+      body.style.overflow = 'hidden'
+    }
+    else {
+      slider.style.bottom = '-100%'
+      setTimeout(() => {
+        container.style.opacity = '0'
+        container.style.display = 'none'
+      }, 1000);
+      body.style.overflow = 'auto'
+    }
+  }
+
+  hide(event: MouseEvent): void {
+    const parentElement = (event.currentTarget as HTMLElement);
+    const childElement = parentElement.querySelector('.slider') as HTMLElement;
+    const body = document.body as HTMLDivElement;
+
+    // Get the position of the parent div and the child div's height
+    const parentRect = parentElement.getBoundingClientRect();
+    const childHeight = childElement.offsetHeight;
+
+    // Check if the click is within the parent div
+    if (
+      event.clientY >= parentRect.top && 
+      event.clientY <= parentRect.top + parentRect.height
+    ) {
+      // Check if the click is in the top 25% of the parent div (above the child div)
+      if (event.clientY < parentRect.top + parentRect.height - childHeight) {
+        childElement.style.bottom = '-100%'
+      
+        setTimeout(() => {
+          parentElement.style.opacity = '0'
+          parentElement.style.display = 'none'
+        }, 1000);
+        setTimeout(() => {
+          body.style.overflow = 'auto'
+        }, 1000);
+      }
+    }
+    this.isPreviewed = false;
+    this.iframeStop();
+  }
+
+  // stop iframe video
+  iframeStop(){
+    const iframe = document.querySelector('iframe');
+    if (iframe) {
+      const src = iframe.src;
+      if (!src.includes('autoplay=1')) {        
+        // If autoplay=1 is in the URL, that means the video is playing, so we pause it
+        iframe.src = src.replace('&autoplay=1', ''); // Remove the autoplay parameter to pause it
+      } 
+    }
+  }
+  
+  syllabus(){
+    const CourseContent = document.querySelector('.subjects') as HTMLDivElement;
+    const i = document.querySelector('.CourseContent .contentHeader i') as HTMLDivElement;
+    CourseContent.classList.toggle('hideCourseContent');
+    i.classList.toggle('rotateArrow');
   }
 }
