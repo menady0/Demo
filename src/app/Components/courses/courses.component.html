@@ -5,7 +5,7 @@
   </div>
   <div class="user">
     <div class="search">
-      <input type="text" placeholder="Search..." />
+      <input type="text" placeholder="Search..." (input)="search(in.value)" #in/>
       <i class="bi bi-search"></i>
     </div>
     <i class="bi bi-person-circle" (click)="user()"></i>
@@ -40,7 +40,36 @@
   <!-- Card countainer -->
   <div [ngClass]="getViewClass()">
     <!-- Card -->
-    <div class="course" [ngClass]="course()">
+    <div class="course" *ngFor="let myCourse of arrOfCourses" [ngClass]="course()">
+      <div class="empty">
+        <div class="btns" [ngClass]="btns()">
+          <a (click)="preview()">Preview</a>
+          <a routerLink="/login">Enroll</a>
+        </div>
+      </div>
+        <img [src]="myCourse.img" alt="" />
+      <div class="context" [ngClass]="context()">
+        <div class="text">
+          <h3>{{myCourse.courseName}} Developer</h3>
+          <p>
+            {{myCourse.courseDes}}
+          </p>
+        </div>
+        <div class="info" [ngClass]="info()">
+          <div>
+            <i class="bi bi-journals"></i>
+            {{myCourse.lessons}} Lessons
+          </div>
+          <div>
+            <i class="bi bi-stopwatch"></i>
+            {{myCourse.len}} hr
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- <div class="course" [ngClass]="course()">
       <div class="empty">
         <div class="btns" [ngClass]="btns()">
           <a (click)="preview()">Preview</a>
@@ -179,7 +208,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
 

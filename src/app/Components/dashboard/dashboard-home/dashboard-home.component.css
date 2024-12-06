@@ -1,0 +1,106 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .points {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.points i {
+  display: inline-block;
+  margin-block: 5px;
+  color: var(--blue);
+}
+
+section h2 {
+  margin-block: 20px;
+}
+
+section .frame {
+  text-align: center;
+  height: 50vh;
+  margin-block: 20px;
+}
+
+.frame iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.buttons button,
+.quiz button {
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.buttons button:first-child {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  transition: .5s;
+}
+.buttons button:first-child:hover {
+  background-color: var(--dark);
+  color: var(--light);
+}
+/* .buttons button:last-child {
+  border: 1px solid var(--blue);
+  transition: .5s;
+}
+.buttons button:last-child:hover {
+  background-color: var(--blue);
+  color: white;
+}
+
+.buttons button:last-child {
+  transition: .5s;
+} */
+
+.buttons button.readed {
+  background-color: green;
+  color: white;
+  border: none;
+}
+
+.quiz {
+  margin-block: 30px;
+}
+.quiz h3 {
+  margin-bottom: 20px;
+}
+.quiz .choices {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 5px;
+}
+.quiz .moveForward {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.quiz button:first-child {
+  background-color: var(--dark);
+  color: white;
+}
+.quiz button:last-child {
+  border: 1px solid var(--blue);
+  transition: .5s;
+  opacity: 0;
+}
+.quiz button:last-child:hover {
+  background-color: var(--blue);
+  color: var(--light);
+}
+.correct-answer {
+  color: green;
+}
+.wrong-answer {
+  color: red;
+}

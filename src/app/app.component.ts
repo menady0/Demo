@@ -7,12 +7,14 @@ import { AboutComponent } from './Components/about/about.component';
 import { FooterComponent } from "./Components/footer/footer.component";
 import { EnrollComponent } from "./Components/enroll/enroll.component";
 import { DashboardComponent } from "./Components/dashboard/dashboard.component";
+import { DashboardHomeComponent } from "./Components/dashboard/dashboard-home/dashboard-home.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet
+    RouterOutlet,
+    DashboardHomeComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

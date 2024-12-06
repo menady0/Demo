@@ -81,7 +81,7 @@
   position: relative;
   cursor: pointer;
   color: var(--blue);
-  background-color: white;
+  background-color: var(--light);
   transition: .5s;
 }
 
@@ -94,7 +94,7 @@
   right: 0;
   top: -100%;
   border-radius: 50%;
-  box-shadow: 35px 35px 0 10px white;
+  box-shadow: 35px 35px 0 10px var(--light);
   transition: .5s;
 }
 .active::after {
@@ -106,7 +106,7 @@
   right: 0;
   bottom: -100%;
   border-radius: 50%;
-  box-shadow: 35px -35px 0 10px white;
+  box-shadow: 35px -35px 0 10px var(--light);
   transition: .5s;
 }
 .menu.closed .active::before {
@@ -118,7 +118,7 @@
 
 
 .content {
-  background-color: white;
+  background-color: var(--light);
   width: calc(100% - 300px);
   /* width: 75%; */
   border-radius: 40px;
@@ -133,7 +133,7 @@
 }
 
 .content::-webkit-scrollbar-thumb {
-  background-color: var(--blue);
+  background-color: var(--dark);
   /* Color of the scrollbar handle */
   border-radius: 10px;
   /* Rounded corners */
@@ -144,7 +144,7 @@
 }
 
 .content::-webkit-scrollbar-thumb:hover {
-  background-color: rgb(0, 51, 122);
+  background-color: var(--blue);
   /* Darker color when hovered */
 }
 
@@ -205,9 +205,38 @@
 }
 @media (max-width: 425px) {
   .menu {
+    overflow-y: hidden;
+    /* overflow-y: auto; */
+  }
+  .menu.openedSmall {
     overflow-y: auto;
   }
   .menu.openedSmall {
     width: 250px;
   }
+}
+
+.welcomeContainer {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.welcome {
+  text-align: center;
+  background-color: rgb(26, 164, 206);
+  width: fit-content;
+  padding: 20px 60px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-inline: auto;
+  position: relative;
+  transition: .5s;
+  color: white;
+}
+.welcome i {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
 }

@@ -32,4 +32,9 @@ export class DashboardComponent {
       }, 800);
     }
   }
+
+  WelcomeHide(){
+    const welcome = document.querySelector('.welcome') as HTMLDivElement;
+    welcome.style.opacity = '0'
+  }
 }

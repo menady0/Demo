@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { Course } from '../../ClassesAndModules/course';
+import { ServiceService } from '../../ClassesAndModules/service.service';
 
 @Component({
   selector: 'app-courses',
@@ -10,11 +12,17 @@ import { RouterLink } from '@angular/router';
   styleUrl: './courses.component.css'
 })
 export class CoursesComponent implements OnInit{
-  // search(){
-  //   const input = document.querySelector('input') as HTMLDivElement;
-  //   input.style.opacity = '1'
-  //   input.style.width = '100%'
-  // }
+  arrOfCourses: Course[];
+  constructor(private _ServiceService:ServiceService){
+    this.arrOfCourses = _ServiceService.getCourses();
+  }
+  search(input: string){
+    if(input != '')
+      this.arrOfCourses = this._ServiceService.searchCourse(input);
+    else
+      this.arrOfCourses = this._ServiceService.getCourses();
+  }
+
 
   activeIcon: string = 'grid'; // Store which icon is currently active
   screenWidth: number = window.innerWidth; // To track screen width

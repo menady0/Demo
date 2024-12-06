@@ -24,11 +24,13 @@ section {
   display: inline-block;
   animation: animateFirst 3s infinite ease-in-out;
   font-weight: bold;
+  transform: translateY(20px) rotate(-15deg);
 }
 .notfound .four:last-child {
   display: inline-block;
   animation: animateFirst 3s .8s infinite ease-in-out;
   font-weight: bold;
+  transform: translateY(20px) rotate(-15deg);
 }
 @keyframes animateFirst {
   0%, 100% {

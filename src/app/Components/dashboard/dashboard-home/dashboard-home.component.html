@@ -1,0 +1,66 @@
+<section>
+  <div class="container">
+    <header>
+      <h2>How Does the Interent Work?</h2>
+      <div class="points">
+        <i class="bi bi-star-fill"></i>
+        <span>{{ points }}</span>
+      </div>
+    </header>
+    <div class="frame">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/TNQsmPf24go?si=iKmj9DukYTSjmkft"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="buttons">
+      <button (click)="read()" [disabled]="markReadBtn">
+        <i class="bi bi-check"></i> <span>Mark as read</span>
+      </button>
+    </div>
+
+    <div class="quiz" *ngIf="randomQuestion">
+      <h3>{{ randomQuestion.Question }}</h3>
+      <div class="choices">
+        <div *ngFor="let op of randomQuestion.options">
+          <input type="radio" name="quiz" [id]="op" [value]="op" [(ngModel)]="selectedAnswer" [disabled]="checked" />
+          <label [for]="op" [ngClass]="{
+              'correct-answer':
+                answerChecked &&
+                selectedAnswer === op &&
+                op === randomQuestion.answer,
+              'wrong-answer':
+                answerChecked &&
+                selectedAnswer === op &&
+                op !== randomQuestion.answer
+            }">
+            {{ op }}</label>
+        </div>
+        <!--         
+        <div>
+          <input type="radio" name="quiz" id="a" value="a" />
+          <label for="a"> To send emails</label>
+        </div>
+
+        <div>
+          <input type="radio" name="quiz" id="b" value="b" />
+          <label for="b"> To connect computers globally</label>
+        </div>
+
+        <div>
+          <input type="radio" name="quiz" id="c" value="c" />
+          <label for="c"> To watch videos</label>
+        </div>
+
+        <div>
+          <input type="radio" name="quiz" id="d" value="d" />
+          <label for="d"> To play online games</label>
+        </div> -->
+      </div>
+      <div class="moveForward">
+        <button (click)="submitAnswer()">Submit</button>
+        <button>Next <i class="bi bi-arrow-right-short"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
