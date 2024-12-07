@@ -209,7 +209,6 @@ button {
   font-size: 18px;
   color: white;
   transition: .5s;
-  
 }
 button.animated {
   animation: btnAnimation 1s;
@@ -233,7 +232,6 @@ button.animatedBack {
     padding-inline: 100px;
   }
 }
-
 #haveAccount {
   display: block;
   margin-block: 30px;

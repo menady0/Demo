@@ -1,1 +1,10 @@
-<p>leaderboard works!</p>
+<div class="leaderboard">
+  <div class="user" *ngFor="let user of users; let i = index" [ngClass]="{'selected': user.username == seletedUser.username}">
+    <div class="name">
+      <span>{{i + 1}}</span>
+      <i class="bi bi-person-circle"></i>
+      <span>{{user.username}}</span>
+    </div>
+    <span>{{user.points}}</span>
+  </div>
+</div>

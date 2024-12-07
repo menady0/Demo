@@ -16,9 +16,7 @@
 
 
   <div class="login">
-    <!-- <h2>{{isMoved ? logion : sign_up}}</h2> -->
     <h2>Create Account</h2>
-    <!-- <h2>Sign in to Learny.</h2> -->
     <div class="links">
       <a href="https://facebook.com">
         <i class="bi bi-facebook"></i>
@@ -31,28 +29,26 @@
       </a>
     </div>
     <p>or use your email for registration:</p>
-    <!-- <p>or use your email account:</p> -->
     <form action="" class="frmLogin">
       <label for="name">
         <i class="bi bi-person"></i>
-        <input type="name" name="name" id="name" placeholder="Name">
+        <input type="name" name="name" id="name" placeholder="Name" #name>
       </label>
       <label for="email">
         <i class="bi bi-envelope"></i>
-        <input type="email" name="email" id="email" placeholder="Email" required>
+        <input type="email" name="email" id="email" placeholder="Email" required #email>
       </label>
       <label for="password">
         <i class="bi bi-key-fill"></i>
-        <input type="password" name="password" id="password" placeholder="Password" required>
+        <input type="password" name="password" id="password" placeholder="Password" required #password>
       </label>
       <a href="" id="forgot">Forgot your password?</a>
       <div class="btn">
         <button type="submit">sign up</button>
-        <!-- <button type="submit">Sign in</button> -->
+        <!-- <button type="submit" (click)="signin(name.value, email.value, password.value)">sign up</button> -->
       </div>
     </form>
     <span id="haveAccount">Already have account? <a (click)="login()">login</a></span>
     <a routerLink="/dashboard">Continue as a guest?</a>
   </div>
-
 </div>

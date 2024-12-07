@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ServiceService } from '../../ClassesAndModules/service.service';
+import { User } from '../../ClassesAndModules/user';
 
 @Component({
   selector: 'app-login',
@@ -10,6 +12,10 @@ import { RouterLink } from '@angular/router';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
+  users: User[]
+  constructor(private _Service:ServiceService){
+    this.users = _Service.getUsers()
+  }
   isMoved = false;
   toggleSlide(){
     this.isMoved = !this.isMoved;
@@ -138,4 +144,13 @@ export class LoginComponent {
       span.innerHTML = 'sign in'
     }
   }
+
+  // signin(name: string, email: string, password: string){
+  //   this._Service.addUser(name, email, password)
+  //   let inputs = document.querySelectorAll('input')
+  //   for(let i = 0; i < inputs.length; i++){
+  //     inputs[i].value = ''
+  //   }
+    
+  // }
 }

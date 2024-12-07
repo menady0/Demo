@@ -13,7 +13,7 @@ export class ServiceService {
       {
         img: "Courses/frontend.jpg",
         courseName: "Frontend",
-        courseDes: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, laborum.",
+        courseDes: "This program will help you master frontend engineering using JavaScript, NodeJS, and React.",
         lessons: 22,
         len: 31
       },
@@ -29,7 +29,30 @@ export class ServiceService {
       {
         username: "Guest",
         password: "",
-        points: 0
+        email: "",
+        points: 0,
+        progress: 0
+      },
+      {
+        username: "Michael",
+        password: "",
+        email: "",
+        points: 200,
+        progress: 0
+      },
+      {
+        username: "David",
+        password: "",
+        email: "",
+        points: 20,
+        progress: 0
+      },
+      {
+        username: "Joseph",
+        password: "",
+        email: "",
+        points: 60,
+        progress: 0
       }
     ]
   }
@@ -43,13 +66,24 @@ export class ServiceService {
   getUsers():User[]{
     return this.Users;
   }
-  addUser(usrname: string, pass: string, pts: number): void {
-    let us = {
-      username: usrname,
-      password: pass,
-      points: pts
-    }
-    this.Users.push(us)
+  getUserByUsername(username: string) {
+    return this.Users.find(user => user.username === username);
   }
+  // addUser(usrname: string, email: string, pass: string, pts: number = 0, progress = 0): void {
+  //   if(!this.Users.find(e => e.email == email)){
+  //     let us = {
+  //       username: usrname,
+  //       password: pass,
+  //       email: email,
+  //       points: pts,
+  //       progress: progress
+  //     }
+  //     this.Users.push(us)
+  //     alert("Done")
+  //   }
+  //   else {
+  //     alert("This email is already exsit, Please login!")
+  //   }
+  // }
 
 }

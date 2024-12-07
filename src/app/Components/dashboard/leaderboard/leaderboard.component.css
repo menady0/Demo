@@ -1,0 +1,20 @@
+.leaderboard {
+  /* background-color: gray; */
+  height: 100%;
+}
+.user {
+  /* background-color: brown; */
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.user .name span {
+  margin-inline: 20px;
+}
+.selected {
+  font-weight: bold;
+  background-color: var(--blue);
+  border-radius: 5px;
+  color: white;
+}

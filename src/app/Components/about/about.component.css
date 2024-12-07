@@ -185,6 +185,7 @@
   width: 100%;
   filter: grayscale(100%);
   transition: .5s;
+  aspect-ratio: 1 / 1;
 }
 .team:hover img {
   filter: grayscale(0);

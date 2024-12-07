@@ -14,6 +14,7 @@
   color: var(--light);
   overflow: hidden;
   transition: .5s;
+  z-index: 1000;
 }
 .menu.closed {
   width: 100px;
@@ -123,7 +124,9 @@
   /* width: 75%; */
   border-radius: 40px;
   padding: 40px;
+  /* overflow: hidden; */
   overflow-y: scroll;
+  overflow-x: hidden;
   transition: .5s;
 }
 .content::-webkit-scrollbar {
@@ -200,7 +203,7 @@
   }
   .content {
     width: 100%;
-    padding-top: 80px;
+    padding: 60px 10px 10px;
   }
 }
 @media (max-width: 425px) {
