@@ -5,7 +5,6 @@ import { LoginComponent } from './Components/login/login.component';
 import { AboutComponent } from './Components/about/about.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
-import { EnrollComponent } from './Components/enroll/enroll.component';
 import { LeaderboardComponent } from './Components/dashboard/leaderboard/leaderboard.component';
 import { DashboardHomeComponent } from './Components/dashboard/dashboard-home/dashboard-home.component';
 

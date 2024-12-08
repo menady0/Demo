@@ -43,8 +43,8 @@
     <div class="course" *ngFor="let myCourse of arrOfCourses" [ngClass]="course()">
       <div class="empty">
         <div class="btns" [ngClass]="btns()">
-          <a (click)="preview()">Preview</a>
-          <a routerLink="/login">Enroll</a>
+          <a (click)="preview(myCourse)" id="preview">Preview</a>
+          <a routerLink="/login" *ngIf="myCourse.courseName == 'Frontend'">Enroll</a>
         </div>
       </div>
         <img [src]="myCourse.img" alt="" />
@@ -67,148 +67,6 @@
         </div>
       </div>
     </div>
-
-
-    <!-- <div class="course" [ngClass]="course()">
-      <div class="empty">
-        <div class="btns" [ngClass]="btns()">
-          <a (click)="preview()">Preview</a>
-          <a routerLink="/login">Enroll</a>
-        </div>
-      </div>
-      <img src="Courses/frontend.jpg" alt="" />
-      <div class="context" [ngClass]="context()">
-        <div class="text">
-          <h3>Frontend Developer</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
-            laborum.
-          </p>
-        </div>
-        <div class="info" [ngClass]="info()">
-          <div>
-            <i class="bi bi-journals"></i>
-            20 Lessons
-          </div>
-          <div>
-            <i class="bi bi-stopwatch"></i>
-            30 hr 12 min
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="course" [ngClass]="course()">
-      <div class="empty">
-        <div class="btns" [ngClass]="btns()">
-          <a>Preview</a>
-          <a href="">Enroll</a>
-        </div>
-      </div>
-      <img src="Courses/frontend.jpg" alt="" />
-      <div class="context" [ngClass]="context()">
-        <div class="text">
-          <h3>Frontend Developer</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
-            laborum.
-          </p>
-        </div>
-        <div class="info" [ngClass]="info()">
-          <div>
-            <i class="bi bi-journals"></i>
-            20 Lessons
-          </div>
-          <div>
-            <i class="bi bi-stopwatch"></i>
-            30 hr 12 min
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="course" [ngClass]="course()">
-      <div class="empty">
-        <div class="btns" [ngClass]="btns()">
-          <a>Preview</a>
-          <a href="">Enroll</a>
-        </div>
-      </div>
-      <img src="Courses/frontend.jpg" alt="" />
-      <div class="context" [ngClass]="context()">
-        <div class="text">
-          <h3>Frontend Developer</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
-            laborum.
-          </p>
-        </div>
-        <div class="info" [ngClass]="info()">
-          <div>
-            <i class="bi bi-journals"></i>
-            20 Lessons
-          </div>
-          <div>
-            <i class="bi bi-stopwatch"></i>
-            30 hr 12 min
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="course" [ngClass]="course()">
-      <div class="empty">
-        <div class="btns" [ngClass]="btns()">
-          <a>Preview</a>
-          <a href="">Enroll</a>
-        </div>
-      </div>
-      <img src="Courses/frontend.jpg" alt="" />
-      <div class="context" [ngClass]="context()">
-        <div class="text">
-          <h3>Frontend Developer</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
-            laborum.
-          </p>
-        </div>
-        <div class="info" [ngClass]="info()">
-          <div>
-            <i class="bi bi-journals"></i>
-            20 Lessons
-          </div>
-          <div>
-            <i class="bi bi-stopwatch"></i>
-            30 hr 12 min
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="course" [ngClass]="course()">
-      <div class="empty">
-        <div class="btns" [ngClass]="btns()">
-          <a>Preview</a>
-          <a href="">Enroll</a>
-        </div>
-      </div>
-      <img src="Courses/frontend.jpg" alt="" />
-      <div class="context" [ngClass]="context()">
-        <div class="text">
-          <h3>Frontend Developer</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
-            laborum.
-          </p>
-        </div>
-        <div class="info" [ngClass]="info()">
-          <div>
-            <i class="bi bi-journals"></i>
-            20 Lessons
-          </div>
-          <div>
-            <i class="bi bi-stopwatch"></i>
-            30 hr 12 min
-          </div>
-        </div>
-      </div>
-    </div> -->
   </div>
 </div>
 
@@ -219,7 +77,7 @@
     <div class="frameContainer">
       <iframe
         title="YouTube video player"
-        src="https://www.youtube.com/embed/GJ8jidDdWVg?si=pAyccH1Wd2kDykLv"
+        [src]="safeUrl"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         referrerpolicy="strict-origin-when-cross-origin"
@@ -230,21 +88,12 @@
     <div class="container">
       <h3>Quick Introduction</h3>
       <p>
-        Front-end development focuses on creating the visual and interactive aspects of websites and applications, ensuring a seamless user experience through HTML, CSS, and JavaScript.
+        {{selectedCard.des}}
       </p>
       <h3>What you will learn?</h3>
       <ul>
-        <li>
-          Create a responsive website using HTML to structure content, CSS to handle visual style, and JavaScript to develop interactive experiences. 
-        </li>
-        <li>
-          Learn to use React in relation to Javascript libraries and frameworks.
-        </li>
-        <li>
-          Learn Bootstrap CSS Framework to create webpages and work with GitHub repositories and version control.
-        </li>
-        <li>
-          Prepare for a coding interview, learn best approaches to problem-solving, and build portfolio-ready projects you can share during job interviews.
+        <li *ngFor="let point of selectedCard.whatYouLearn">
+          {{point}}
         </li>
       </ul>
 
@@ -254,20 +103,15 @@
           <i class="bi bi-chevron-down"></i>
         </div>
         <ol class="subjects">
-          <li>Intro to the Internet and Web</li>
-          <li>HTML and CSS</li>
-          <li>Git Basics</li>
-          <li>JavaScript Basics</li>
-          <li>Advanced JavaScript</li>
-          <li>Asynchronous JavaScript</li>
-          <li>React Basics</li>
-          <li>Advanced React</li>
+          <li *ngFor="let point of selectedCard.syllabus">
+            {{point}}
+          </li>
         </ol>
       </div>
 
       <div class="btnSlider">
-        <button (click)="preview()"><i class="bi bi-arrow-left-short"></i> Back</button>
-        <button routerLink="/login">Let's Start <i class="bi bi-arrow-right-short"></i></button>
+        <button (click)="preview2()" id="back"><i class="bi bi-arrow-left-short"></i> Back</button>
+        <button routerLink="/login" *ngIf="selectedCard.track == 'Frontend'">Let's Start <i class="bi bi-arrow-right-short"></i></button>
       </div>
     </div>
   </div>

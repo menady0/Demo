@@ -104,3 +104,64 @@
     padding: 8px 15px;
   }
 }
+
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  padding-inline: 7%;
+  padding-block: 20px;
+  background-color: var(--dark);
+  color: var(--light);
+}
+.footer .links {
+  display: flex;
+  gap: 20px;
+}
+.links a {
+  text-decoration: none;
+  color: white;
+  transition: .5s;
+}
+.links a:hover {
+  color: var(--blue);
+}
+
+@media (max-width: 768px) {
+  .notfound::before,
+  .notfound::after {
+    width: 20%;
+  }
+  .text {
+    width: 100%;
+    font-size: 2.5vw;
+  }
+}
+@media (max-width: 600px) {
+  .notfound {
+    font-size: 20vw;
+  }
+  .notfound .zero {
+    animation: none;
+  }
+}
+@media (max-width: 425px) {
+  .notfound .zero {
+    font-size: 20vw;
+  }
+  .footer {
+    font-size: 8px;
+  }
+}
+@media (max-width: 320px) {
+  .notfound::before,
+  .notfound::after {
+    display: none;
+  }
+  .notfound .four:first-child,
+  .notfound .four:last-child {
+    animation: none;
+  }
+}

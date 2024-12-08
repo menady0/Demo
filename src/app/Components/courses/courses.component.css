@@ -343,7 +343,7 @@
   color: white;
 }
 
-.empty a:first-child {
+.empty #preview {
   background-color: transparent;
   border: 1px solid var(--blue);
 }
@@ -428,10 +428,10 @@
   /* Rounded corners for the track */
 }
 
-.slider::-webkit-scrollbar-track:hover {
-  /* Lighter track color on hover */
-  /* background-color: #111110;  */
-}
+/* .slider::-webkit-scrollbar-track:hover {
+  Lighter track color on hover
+  background-color: #111110; 
+} */
 
 .dash {
   width: 8%;
@@ -560,11 +560,11 @@ iframe {
   background-color: transparent;
   text-decoration: none;
 }
-.slider .btnSlider button:first-child {
+.slider .btnSlider #back {
   border: 1px solid #f9423a;
   transition: .5s;
 }
-.slider .btnSlider button:first-child:hover {
+.slider .btnSlider #back:hover {
   background-color: #f9423a;
   
 }

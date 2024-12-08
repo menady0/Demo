@@ -3,7 +3,7 @@
     <section class="container">
       <nav>
         <i class="bi bi-list" (click)="menu()"></i>
-        <div class="logo"><span class="blue">Lear</span>ny<span class="blue">.</span></div>
+        <div class="logo" routerLink="/home"><span class="blue">Lear</span>ny<span class="blue">.</span></div>
         <ul>
           <li>
             <a routerLink="/home">Home</a>
@@ -40,7 +40,7 @@
                 <p>
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam culpa fuga soluta minus at error, blanditiis aliquid sapiente tenetur beatae veniam modi quam accusamus voluptas animi quibusdam nulla repudiandae cupiditate.
                 </p>
-                <a href="#">Explore</a>
+                <a routerLink="/courses">Explore</a>
               </div>
             </div>
             <div class="card two">
@@ -71,9 +71,9 @@
         </div>
         <div class="right">
           <p>
-            Elevate your management skills with our cutting-edge courses. Join Our Courses for Comprehensive Learning.
+            Elevate your development skills with our cutting-edge courses. Join Our Courses for Comprehensive Learning.
           </p>
-          <a href="">Start Now</a>
+          <a routerLink="/courses">Start Now</a>
           <img src="Home/Robot.png" alt="Robot" id="robot">
           <div class="test">
             <div class="joiners">
@@ -108,7 +108,7 @@
   <div class="courses-container">
     <div class="context">
       <h2>
-        Advanced Leardership Strategies
+        Top required skills & Courses
       </h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic iusto culpa laudantium porro doloremque aliquam vero autem, odit aperiam reprehenderit cum libero modi laboriosam vel explicabo deserunt dolorem facere nisi sequi
@@ -119,19 +119,19 @@
         <h3>Front-end</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, animi.</p>
         <img src="Home/react.png" alt="">
-        <span><i class="bi bi-arrow-up-right"></i></span>
+        <span routerLink="/courses"><i class="bi bi-arrow-up-right"></i></span>
       </div>
       <div class="course-card">
         <img src="Home/php.png" alt="">
-        <span><i class="bi bi-arrow-up-right"></i></span>
-        <h3>Front-end</h3>
+        <span routerLink="/courses"><i class="bi bi-arrow-up-right"></i></span>
+        <h3>Back-end</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, animi.</p>
       </div>
       <div class="course-card">
-        <h3>Front-end</h3>
+        <h3>DevOps</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, animi.</p>
         <img src="Home/devops.png" alt="">
-        <span><i class="bi bi-arrow-up-right"></i></span>
+        <span routerLink="/courses"><i class="bi bi-arrow-up-right"></i></span>
       </div>
     </div>
     <div class="more-courses">

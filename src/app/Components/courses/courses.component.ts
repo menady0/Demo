@@ -3,6 +3,9 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Course } from '../../ClassesAndModules/course';
 import { ServiceService } from '../../ClassesAndModules/service.service';
+import { CoursePreview } from '../../ClassesAndModules/course-preview';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-courses',
@@ -13,8 +16,13 @@ import { ServiceService } from '../../ClassesAndModules/service.service';
 })
 export class CoursesComponent implements OnInit{
   arrOfCourses: Course[];
-  constructor(private _ServiceService:ServiceService){
+  arrOfPreview: CoursePreview[]
+  safeUrl: SafeResourceUrl;
+  constructor(private _ServiceService:ServiceService, private sanitizer: DomSanitizer){
     this.arrOfCourses = _ServiceService.getCourses();
+    this.selectedCard = this.arrOfCourses[0]
+    this.arrOfPreview = _ServiceService.getcoursePreview()
+    this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl("h");
   }
   search(input: string){
     if(input != '')
@@ -22,7 +30,6 @@ export class CoursesComponent implements OnInit{
     else
       this.arrOfCourses = this._ServiceService.getCourses();
   }
-
 
   activeIcon: string = 'grid'; // Store which icon is currently active
   screenWidth: number = window.innerWidth; // To track screen width
@@ -99,8 +106,20 @@ export class CoursesComponent implements OnInit{
     menu.classList.toggle('menuOpened')
   }
 
+  changeUrl(card: any) {
+    this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(card.url);
+  }
+  
   isPreviewed:boolean = false;
-  preview(){
+  selectedCard: any;
+  preview(card: any = null){
+    if (card) {
+      this.selectedCard = this.arrOfPreview.find((course) => course.track === card.courseName)
+      this.changeUrl(this.selectedCard)
+    }
+    else {
+      this.selectedCard = null
+    } 
     const container = document.querySelector('.sliderContainer') as HTMLDivElement;
     const slider = document.querySelector('.slider') as HTMLDivElement;
     const body = document.body as HTMLDivElement;
@@ -121,7 +140,29 @@ export class CoursesComponent implements OnInit{
       }, 1000);
       body.style.overflow = 'auto'
     }
+    this.scrollToTop(slider)
+    console.log(this.isPreviewed);
+    
   }
+  preview2(){
+    const container = document.querySelector('.sliderContainer') as HTMLDivElement;
+    const slider = document.querySelector('.slider') as HTMLDivElement;
+    const body = document.body as HTMLDivElement;
+    slider.style.bottom = '-100%'
+    setTimeout(() => {
+      container.style.opacity = '0'
+      container.style.display = 'none'
+    }, 1000);
+    body.style.overflow = 'auto'
+    this.isPreviewed = false
+  }
+  scrollToTop(Element: any) {
+    Element.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+  
 
   hide(event: MouseEvent): void {
     const parentElement = (event.currentTarget as HTMLElement);
@@ -172,4 +213,5 @@ export class CoursesComponent implements OnInit{
     CourseContent.classList.toggle('hideCourseContent');
     i.classList.toggle('rotateArrow');
   }
+
 }
