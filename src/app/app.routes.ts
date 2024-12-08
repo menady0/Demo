@@ -7,6 +7,8 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
 import { LeaderboardComponent } from './Components/dashboard/leaderboard/leaderboard.component';
 import { DashboardHomeComponent } from './Components/dashboard/dashboard-home/dashboard-home.component';
+import { ForumComponent } from './Components/forum/forum.component';
+import { CommunityComponent } from './Components/community/community.component';
 
 export const routes: Routes = [
   {'path': 'home', 'title': 'Learny. | Learn Whatever You Want At Anytime', component: HomeComponent},
@@ -19,8 +21,9 @@ export const routes: Routes = [
       {path: 'leaderboard', component: LeaderboardComponent},
       {path: '', redirectTo: 'Home Dashboard', pathMatch: 'full'},
       {path: '**', component: PageNotFoundComponent}
-
     ]},
+  {'path': 'forum', 'title': 'Learny. | Forum', component: ForumComponent},
+  {'path': 'community', 'title': 'Learny. | Meet Our Community', component: CommunityComponent},
   {'path': '', redirectTo: '/home', pathMatch: 'full'},
   {'path': "**", 'title': "404", component: PageNotFoundComponent}
 ];
